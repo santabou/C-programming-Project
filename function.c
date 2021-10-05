@@ -10,8 +10,12 @@ void select();
 
 void select()
 {
+    int c;
+    int selection;
     printf("Your selection: ");
-    int selection = getchar();
+    while((c = getchar()) != '\n')
+        selection = c - '0';
+
     switch(selection){
         case 1:
             view();
@@ -28,7 +32,7 @@ void select()
         case 5:
             exit(0);
         default:
-            printf("Invalid Selection!");
+            printf("Invalid Selection!\n");
             select();
     }
 }
@@ -44,4 +48,17 @@ void menu()
     printf("5. Exit\n\n");
 
     select();
+}
+
+void view(){
+    //TODO
+}
+void create(){
+    //TODO
+}
+void delete(){
+    //TODO
+}
+void edit(){
+    //TODO
 }

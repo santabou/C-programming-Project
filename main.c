@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "function.c"
 
 enum gender{male, female};
@@ -21,5 +20,16 @@ typedef struct
 
 int main()
 {
-    menu();
+    printf("Welcome to Student Database Management System!");
+    for(FILE* data = fopen("data", "r"); data == NULL;)
+    {
+        printf("Cannot find database file. Creating a blank database");
+        fclose(data);
+        fopen("data", "w");
+        data = fopen("data", "r");
+    }
+    while(1)
+    {
+        menu();
+    }
 }
