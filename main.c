@@ -1,33 +1,21 @@
 #include <stdio.h>
 #include "function.c"
-
-enum gender{male, female};
-
-typedef struct
-{
-    int id;
-    enum gender gender;
-    char first_name[20];
-    char last_name[20];
-    char program[20];
-}Student;
-
-typedef struct
-{
-    Student student;
-    Student* next;
-}Node;
+#include "base.c"
 
 int main()
 {
-    printf("Welcome to Student Database Management System!");
+    printf("Welcome to Student Database Management System!\n");
     for(FILE* data = fopen("data", "r"); data == NULL;)
     {
         printf("Cannot find database file. Creating a blank database");
         fclose(data);
-        fopen("data", "w");
+        FILE* create = fopen("data", "w");
+        FileHeader blank = {0};
+        fwrite(&blank, sizeof(FileHeader), 1, create);
+        fclose(create);
         data = fopen("data", "r");
     }
+
     while(1)
     {
         menu();

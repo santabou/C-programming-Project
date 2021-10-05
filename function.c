@@ -30,6 +30,7 @@ void select()
             edit();
             break;
         case 5:
+            //savefile TODO
             exit(0);
         default:
             printf("Invalid Selection!\n");
@@ -45,7 +46,7 @@ void menu()
     printf("2. Create new student data\n");
     printf("3. Delete student data\n");
     printf("4. Edit student data\n");
-    printf("5. Exit\n\n");
+    printf("5. Save & Exit\n\n");
 
     select();
 }
