@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "function.c"
 
- enum gender{male, female};
-// male = 0 female = 1
+enum gender{male, female};
 
 typedef struct
 {
@@ -19,12 +19,9 @@ typedef struct
     Student* next;
 }Node;
 
-void view();
-void create();
-void delete();
-void edit();
-void select();
 void menu();
+void select();
+
 void select()
 {
 
