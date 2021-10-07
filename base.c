@@ -23,9 +23,17 @@ typedef struct Node
 // for linked list in main
 
 // find a student from student ID. Return NULL if not found.
-Node* findStudent(int student_id)
+Node* findStudent(int student_id, Node* first)
 {
-    //TODO
+    Node* find = first;
+    while(find->next != NULL)
+    {
+        if(find->student.id == student_id)
+            return find;
+        else
+            find = find->next;
+    }
+    return NULL;
 }
 
 // read the database file(Fileheader + Student structs) and link them into a linked list
@@ -35,7 +43,12 @@ Node* readFile(FILE* file)
 }
 
 // save the linked list into the database file(Fileheader + student structs)
-void saveFile(FILE* file, Node* nodePtr)
+void saveFile(FILE* file, Node* first)
 {
-    //TODO
+    Node* nodeptr = first;
+    while(nodeptr->next != NULL)
+    {
+        fwrite(nodeptr, sizeof(Student), 1, file);
+        nodeptr = nodeptr->next;
+    }
 }
