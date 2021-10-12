@@ -1,61 +1,82 @@
 // base functions\
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "base.c"
 
-void view();
-void create();
+void view(Node*);
+Node* create();
 void delete();
 void edit();
-void select();
 
-void select()
+
+void view(Node* first)
 {
-    int c;
-    int selection;
-    printf("Your selection: ");
-    while((c = getchar()) != '\n')
-        selection = c - '0';
-
-    switch(selection){
-        case 1:
-            view();
-            break;
-        case 2:
-            create();
-            break;
-        case 3:
-            delete();
-            break;
-        case 4:
-            edit();
-            break;
-        case 5:
-            //savefile TODO
-            exit(0);
-        default:
-            printf("Invalid Selection!\n");
-            select();
+    printf("Enter student id: ");
+    int student_id = getint();
+    Node* ptr;
+    if((ptr = findStudent(student_id, first)) != NULL)
+    {
+        printf("Student ID: %i\n", ptr->student.id);
+        printf("Name: ");
+        printf(ptr->student.first_name);
+        printf(ptr->student.last_name);
     }
+    else
+        printf("Student not found!\n");
 }
 
-void menu()
+Node* create(Node* last)
 {
-    printf("MENU\n");
-    printf("Enter a number to proceed:\n");
-    printf("1. View student data\n");
-    printf("2. Create new student data\n");
-    printf("3. Delete student data\n");
-    printf("4. Edit student data\n");
-    printf("5. Save & Exit\n\n");
+    last->next = (Node*) malloc(sizeof(Node));
+    if(last->next == NULL)
+    {
+        printf("Cannot allocate memory");
+        return NULL;
+    }
+    last = last->next;
+    int id;
+    char firstName[20], lastName[20], programme[40];
+    int genderbuffer;
+    enum gender gender;
+    printf("Enter student ID: ");
+    id = getint();
+    while(1)
+    {
+        printf("Enter gender(1 for male/2 for female)");
+        genderbuffer = getint();
+        if(genderbuffer == 1)
+        {
+            gender = male;
+            break;
+        }
+        else if(genderbuffer == 2)
+        {
+            gender = female;
+            break;
+        }
+        else
+        {
+            printf("Invalid input");
+        }
+    }
+    printf("Enter the student's first name: ");
+    gets(firstName);
+    printf("Enter the student's last name: ");
+    gets(lastName);
+    printf("Enter the student's programme: ");
+    gets(programme);
 
-    select();
-}
+    last->student.id = id;
+    last->student.gender = gender;
+    strcpy(last->student.first_name, firstName);
+    strcpy(last->student.last_name, lastName);
+    strcpy(last->student.program, programme);
+    last->next = NULL;
 
-void view(){
-    //TODO
-}
-void create(){
-    //TODO
+    printf("%i", last->student.id);
+
+    return last;
 }
 void delete(){
     //TODO

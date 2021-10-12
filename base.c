@@ -2,17 +2,11 @@ enum gender{male, female};
 
 typedef struct
 {
-    int numberOfStudents;
-}FileHeader;
-// file = Fileheader followed by series of Student struct
-
-typedef struct
-{
     int id;
     enum gender gender;
     char first_name[20];
     char last_name[20];
-    char program[20];
+    char program[40];
 }Student;
 
 typedef struct Node
@@ -36,10 +30,22 @@ Node* findStudent(int student_id, Node* first)
     return NULL;
 }
 
-// read the database file(Fileheader + Student structs) and link them into a linked list
-Node* readFile(FILE* file)
+// read the database file(Fileheader + Student structs) and link them into a linked list, return a pointer to the last node
+Node* readFile(FILE* file, Node* first)
 {
-    //TODO
+    Node* last = first;
+    fread(&(first->student), sizeof(Student), 1, file);
+    first->next = (Node*) malloc(sizeof(Node));
+    Node* ptr = first->next;
+    while(!feof(file))
+    {
+        fread(&(ptr->student), sizeof(Student), 1, file);
+        ptr->next = (Node*) malloc(sizeof(Node));
+        last = ptr;
+        ptr = ptr->next;
+    }
+    free(ptr);
+    return last;
 }
 
 // save the linked list into the database file(Fileheader + student structs)
@@ -52,3 +58,20 @@ void saveFile(FILE* file, Node* first)
         nodeptr = nodeptr->next;
     }
 }
+
+int getint()
+{
+    int character;
+    char bufferString[20];
+    int i = 0;
+    while((character = getchar()) != '\n')
+    {
+        bufferString[i] = (char) character;
+        ++i;
+        if(i >= 18)
+            break;
+    }
+    bufferString[i] = '\0';
+    return (int) strtol(bufferString, NULL, 10);
+}
+
