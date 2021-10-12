@@ -28,6 +28,8 @@ Node* findStudent(int student_id, Node* first)
         else
             find = find->next;
     }
+    if(find->student.id == student_id)
+        return find;
     return NULL;
 }
 
