@@ -21,15 +21,13 @@ typedef struct Node
 Node* findStudent(int student_id, Node* first)
 {
     Node* find = first;
-    while(find->next != NULL)
+    while(find != NULL)
     {
         if(find->student.id == student_id)
             return find;
         else
             find = find->next;
     }
-    if(find->student.id == student_id)
-        return find;
     return NULL;
 }
 
@@ -37,17 +35,20 @@ Node* findStudent(int student_id, Node* first)
 Node* readFile(FILE* file, Node* first)
 {
     Node* last = first;
-    fread(&(first->student), sizeof(Student), 1, file);
-    first->next = (Node*) malloc(sizeof(Node));
-    Node* ptr = first->next;
-    while(!feof(file))
+    if(!feof(file))
     {
-        fread(&(ptr->student), sizeof(Student), 1, file);
-        ptr->next = (Node*) malloc(sizeof(Node));
-        last = ptr;
-        ptr = ptr->next;
+        fread(&(first->student), sizeof(Student), 1, file);
+        first->next = (Node*) malloc(sizeof(Node));
+        Node* ptr = first->next;
+        while(!feof(file))
+        {
+            fread(&(ptr->student), sizeof(Student), 1, file);
+            ptr->next = (Node*) malloc(sizeof(Node));
+            last = ptr;
+            ptr = ptr->next;
+        }
+        free(ptr);
     }
-    free(ptr);
     return last;
 }
 
@@ -55,7 +56,7 @@ Node* readFile(FILE* file, Node* first)
 void saveFile(FILE* file, Node* first)
 {
     Node* nodeptr = first;
-    while(nodeptr->next != NULL)
+    while(nodeptr != NULL)
     {
         fwrite(nodeptr, sizeof(Student), 1, file);
         nodeptr = nodeptr->next;

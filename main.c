@@ -4,22 +4,23 @@
 int main()
 {
     printf("Welcome to Student Database Management System!\n");
-    FILE* data = fopen("data", "r+");
+    FILE* data = fopen("data", "r");
     if (data == NULL)
     {
         printf("Cannot find database file. Creating a blank database\n");
         fclose(data);
         FILE* create = fopen("data", "w");
         fclose(create);
-        data = fopen("data", "r+");
+        data = fopen("data", "r");
     }
 
     Node* first = (Node*) malloc(sizeof(Node));
     Node* last = readFile(data, first);
+    fclose(data);
 
     while(1)
     {
-        printf("MENU\n");
+        printf("\nMENU\n");
         printf("Enter a number to proceed:\n");
         printf("1. View student data\n");
         printf("2. Create new student data\n");
@@ -47,7 +48,9 @@ int main()
                 edit();
                 break;
             case 5:
+                data = fopen("data", "w");
                 saveFile(data, first);
+                fclose(data);
                 exit(0);
             default:
                 printf("Invalid Selection!\n");
