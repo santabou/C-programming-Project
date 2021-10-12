@@ -1,3 +1,4 @@
+#include <stdio.h>
 enum gender{male, female};
 
 typedef struct
