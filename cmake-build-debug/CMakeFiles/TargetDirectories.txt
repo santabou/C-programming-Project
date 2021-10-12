@@ -1,3 +1,3 @@
-/Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/cmake-build-debug/CMakeFiles/main.dir
+/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/cmake-build-debug/CMakeFiles/main.dir
