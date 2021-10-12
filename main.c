@@ -51,9 +51,11 @@ int main()
                 data = fopen("data", "w");
                 saveFile(data, first);
                 fclose(data);
+                printf("Exiting program.");
                 exit(0);
             default:
                 printf("Invalid Selection!\n");
         }
+        printf("\n\nReturning to main menu. \n");
     }
 }

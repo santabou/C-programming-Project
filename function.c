@@ -1,11 +1,9 @@
-// base functions\
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "base.c"
 
 void view(Node*);
-Node* create();
+Node* create(Node*);
 void delete();
 void edit();
 
@@ -18,9 +16,12 @@ void view(Node* first)
     if((ptr = findStudent(student_id, first)) != NULL)
     {
         printf("Student ID: %i\n", ptr->student.id);
-        printf("Name: ");
-        printf(ptr->student.first_name);
-        printf(ptr->student.last_name);
+        printf("Name: %s %s\n", ptr->student.first_name, ptr->student.last_name);
+        if(ptr->student.gender == male)
+            printf("Gender: Male\n");
+        else
+            printf("Gender: Female\n");
+        printf("Programme: %s", ptr->student.program);
     }
     else
         printf("Student not found!\n");
@@ -37,35 +38,28 @@ Node* create(Node* last)
     last = last->next;
     int id;
     char firstName[20], lastName[20], programme[40];
-    int genderbuffer;
     enum gender gender;
+    int genderInput;
     printf("Enter student ID: ");
     id = getint();
     while(1)
     {
-        printf("Enter gender(1 for male/2 for female)");
-        genderbuffer = getint();
-        if(genderbuffer == 1)
-        {
-            gender = male;
-            break;
-        }
-        else if(genderbuffer == 2)
-        {
-            gender = female;
-            break;
-        }
+        printf("Enter gender(M for male || F for female): ");
+        genderInput = getgender();
+        if(genderInput == -1)
+            continue;
         else
         {
-            printf("Invalid input");
+            gender = genderInput;
+            break;
         }
     }
     printf("Enter the student's first name: ");
-    gets(firstName);
+    getstring(firstName, 20);
     printf("Enter the student's last name: ");
-    gets(lastName);
+    getstring(lastName, 20);
     printf("Enter the student's programme: ");
-    gets(programme);
+    getstring(programme, 40);
 
     last->student.id = id;
     last->student.gender = gender;

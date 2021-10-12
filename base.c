@@ -52,7 +52,7 @@ Node* readFile(FILE* file, Node* first)
     return last;
 }
 
-// save the linked list into the database file(Fileheader + student structs)
+// save the linked list into the database file
 void saveFile(FILE* file, Node* first)
 {
     Node* nodeptr = first;
@@ -77,5 +77,38 @@ int getint()
     }
     bufferString[i] = '\0';
     return (int) strtol(bufferString, NULL, 10);
+}
+
+enum gender getgender()
+    {
+        int c;
+        if((c = getchar()) != '\n')
+        {
+            if(c == 'M')
+                return male;
+            else if(c == 'F')
+                return female;
+            else
+            {
+                printf("Invalid gender input\n");
+                return -1;
+            }
+        }
+        printf("Blank input\n");
+        return -1;
+    }
+
+void getstring(char* string, int len)
+{
+    int c;
+    int count = 0;
+    while((c = getchar()) != '\n')
+    {
+        string[count] = (char) c;
+        if(count >= len)
+            break;
+        ++count;
+    }
+    string[count] = '\0';
 }
 
