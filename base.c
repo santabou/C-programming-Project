@@ -43,11 +43,14 @@ Node* readFile(FILE* file, Node* first)
         while(!feof(file))
         {
             fread(&(ptr->student), sizeof(Student), 1, file);
+            if(ptr->student.id == 0)
+                continue;
             ptr->next = (Node*) malloc(sizeof(Node));
             last = ptr;
             ptr = ptr->next;
         }
         free(ptr);
+        ptr = NULL;
     }
     return last;
 }
@@ -58,6 +61,11 @@ void saveFile(FILE* file, Node* first)
     Node* nodeptr = first;
     while(nodeptr != NULL)
     {
+        if(nodeptr->student.id == 0)
+        {
+            nodeptr = nodeptr->next;
+            continue;
+        }
         fwrite(nodeptr, sizeof(Student), 1, file);
         nodeptr = nodeptr->next;
     }
@@ -92,7 +100,7 @@ enum gender getgender()
             printf("Invalid gender input\n");
             return -1;
         }
-        if((c = getchar()) == '\n')
+        if(getchar() == '\n')
             return gender;
         else
         {

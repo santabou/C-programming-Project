@@ -4,19 +4,22 @@
 int main()
 {
     printf("Welcome to Student Database Management System!\n");
+    Node* first;
+    Node* last;
     FILE* data = fopen("data", "r");
     if (data == NULL)
     {
-        printf("Cannot find database file. Creating a blank database\n");
+        printf("Cannot find database file.\n");
         fclose(data);
-        FILE* create = fopen("data", "w");
-        fclose(create);
-        data = fopen("data", "r");
+        first = (Node*) malloc(sizeof(Node));
+        last = first; //<< 1 node
     }
-
-    Node* first = (Node*) malloc(sizeof(Node));
-    Node* last = readFile(data, first);
-    fclose(data);
+    else
+    {
+        first = (Node*) malloc(sizeof(Node));
+        last = readFile(data, first);
+        fclose(data);
+    }
 
     while(1)
     {
@@ -39,10 +42,10 @@ int main()
                 view(first);
                 break;
             case 2:
-                last = create(last);
+                last = create(first, last);
                 break;
             case 3:
-                delete();
+                delete(&first, &last);
                 break;
             case 4:
                 edit();

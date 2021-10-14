@@ -3,8 +3,8 @@
 #include "base.c"
 
 void view(Node*);
-Node* create(Node*);
-void delete();
+Node* create(Node*, Node*);
+void delete(Node**, Node**);
 void edit();
 
 
@@ -27,21 +27,26 @@ void view(Node* first)
         printf("Student not found!\n");
 }
 
-Node* create(Node* last)
+Node* create(Node* first, Node* last)
 {
+    printf("Creating new student data\n");
+    printf("Enter student ID: ");
+    int id = getint();
+    if(findStudent(id, first) != NULL)
+    {
+        printf("The student ID already exists.\nPlease use the edit function instead.\n");
+        return last;
+    }
     last->next = (Node*) malloc(sizeof(Node));
     if(last->next == NULL)
     {
         printf("Cannot allocate memory");
-        return NULL;
+        return last;
     }
     last = last->next;
-    int id;
     char firstName[20], lastName[20], programme[40];
     enum gender gender;
     int genderInput;
-    printf("Enter student ID: ");
-    id = getint();
     while(1)
     {
         printf("Enter gender(M for male || F for female): ");
@@ -72,7 +77,7 @@ Node* create(Node* last)
 
     return last;
 }
-void delete(){
+void delete(Node** firstptr, Node** lastptr){
     //TODO
 }
 void edit(){
