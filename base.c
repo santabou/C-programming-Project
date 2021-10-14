@@ -82,20 +82,23 @@ int getint()
 enum gender getgender()
     {
         int c;
-        if((c = getchar()) != '\n')
+        enum gender gender;
+        if((c = getchar()) == 'M')
+            gender = male;
+        else if(c == 'F')
+            gender = female;
+        else
         {
-            if(c == 'M')
-                return male;
-            else if(c == 'F')
-                return female;
-            else
-            {
-                printf("Invalid gender input\n");
-                return -1;
-            }
+            printf("Invalid gender input\n");
+            return -1;
         }
-        printf("Blank input\n");
-        return -1;
+        if((c = getchar()) == '\n')
+            return gender;
+        else
+        {
+            printf("Invalid gender input\n");
+            return -1;
+        }
     }
 
 void getstring(char* string, int len)
