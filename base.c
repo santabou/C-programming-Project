@@ -17,7 +17,7 @@ typedef struct Node
 }Node;
 // for linked list in main
 
-// find a student from student ID. Return NULL if not found.
+// find a student from student ID. Return NULL if not found. Return a pointer pointing at that node.
 Node* findStudent(int student_id, Node* first)
 {
     Node* find = first;
@@ -27,6 +27,24 @@ Node* findStudent(int student_id, Node* first)
             return find;
         else
             find = find->next;
+    }
+    return NULL;
+}
+
+// find a student from student ID. Return NULL if not found. Return a pointer pointing to node prior.
+Node* findDeleteStudent(int student_id, Node* first)
+{
+    Node* findDelete;
+    Node* find = first;
+    while(find != NULL)
+    {
+        if(find->student.id == student_id)
+            return findDelete;
+        else
+        {
+            findDelete = find;
+            find = find->next;
+        }
     }
     return NULL;
 }
@@ -117,4 +135,6 @@ void getstring(char* string, int len)
     }
     string[count] = '\0';
 }
+
+
 
