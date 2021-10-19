@@ -73,7 +73,7 @@ Node* create(Node* first, Node* last)
     strcpy(last->student.program, programme);
     last->next = NULL;
 
-    printf("%i", last->student.id);
+    printf("Created student ID %i successfully\n", id);
 
     return last;
 }
@@ -82,7 +82,6 @@ void delete(Node** firstptr, Node** lastptr){
     printf("Enter student ID: ");
     int id = getint();
     Node* del = findStudent(id, *firstptr);
-    Node* finddel = findDeleteStudent(id, *firstptr);
     if(del == NULL)
     {
         printf("The student ID does not exists.\n");
@@ -97,12 +96,9 @@ void delete(Node** firstptr, Node** lastptr){
    }
    else if(del == *lastptr)
    {
-       Node* temp = *firstptr;
-       while(temp->next->next!=NULL)
-       {
-           temp = temp->next;
-       }
-       temp->next = NULL;
+       Node* delete = findDeleteStudent(id, *firstptr);
+       *lastptr = delete;
+       delete->next = NULL;
        free(del);
    }
    else
@@ -112,6 +108,7 @@ void delete(Node** firstptr, Node** lastptr){
        delete->next = delete->next->next;
        free(temp);
    }
+   printf("Deleted student ID %i successfully\n", id);
 }
 void edit(){
     //TODO
