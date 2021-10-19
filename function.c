@@ -78,7 +78,40 @@ Node* create(Node* first, Node* last)
     return last;
 }
 void delete(Node** firstptr, Node** lastptr){
-    //TODO
+    printf("Deleting student data\n");
+    printf("Enter student ID: ");
+    int id = getint();
+    Node* del = findStudent(id, *firstptr);
+    Node* finddel = findDeleteStudent(id, *firstptr);
+    if(del == NULL)
+    {
+        printf("The student ID does not exists.\n");
+        return;
+    }
+   if (del == *firstptr)
+   {
+       Node* temp = *firstptr;
+       *firstptr = (*firstptr)->next;
+       free(temp);
+
+   }
+   else if(del == *lastptr)
+   {
+       Node* temp = *firstptr;
+       while(temp->next->next!=NULL)
+       {
+           temp = temp->next;
+       }
+       temp->next = NULL;
+       free(del);
+   }
+   else
+   {
+       Node* delete = findDeleteStudent(id, *firstptr);
+       Node* temp = delete->next;
+       delete->next = delete->next->next;
+       free(temp);
+   }
 }
 void edit(){
     //TODO

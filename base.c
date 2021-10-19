@@ -34,7 +34,7 @@ Node* findStudent(int student_id, Node* first)
 // find a student from student ID. Return NULL if not found. Return a pointer pointing to node prior.
 Node* findDeleteStudent(int student_id, Node* first)
 {
-    Node* findDelete;
+    Node* findDelete = NULL;
     Node* find = first;
     while(find != NULL)
     {
