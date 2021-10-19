@@ -35,23 +35,18 @@ Node* findStudent(int student_id, Node* first)
 Node* readFile(FILE* file, Node* first)
 {
     Node* last = first;
-    if(!feof(file))
+    Node* ptr = first;
+    while(!feof(file))
     {
-        fread(&(first->student), sizeof(Student), 1, file);
-        first->next = (Node*) malloc(sizeof(Node));
-        Node* ptr = first->next;
-        while(!feof(file))
-        {
-            fread(&(ptr->student), sizeof(Student), 1, file);
-            if(ptr->student.id == 0)
-                continue;
-            ptr->next = (Node*) malloc(sizeof(Node));
-            last = ptr;
-            ptr = ptr->next;
-        }
-        free(ptr);
-        ptr = NULL;
+        fread(&(ptr->student), sizeof(Student), 1, file);
+        if(feof(file))
+            break;
+        ptr->next = (Node*) malloc(sizeof(Node));
+        last = ptr;
+        ptr = ptr->next;
     }
+    free(ptr);
+    last->next = NULL;
     return last;
 }
 
