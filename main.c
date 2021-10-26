@@ -11,8 +11,9 @@ int main()
     {
         printf("Cannot find database file.\n");
         fclose(data);
+        //TODO create first student data here
         first = (Node*) malloc(sizeof(Node));
-        last = first; //<< 1 node
+        last = first;
     }
     else
     {

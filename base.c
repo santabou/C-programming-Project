@@ -74,7 +74,7 @@ void saveFile(FILE* file, Node* first)
     Node* nodeptr = first;
     while(nodeptr != NULL)
     {
-        if(nodeptr->student.id == 0)
+        if(nodeptr->student.id <= 0)
         {
             nodeptr = nodeptr->next;
             continue;
