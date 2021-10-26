@@ -48,7 +48,7 @@ int main()
                 delete(&first, &last);
                 break;
             case 4:
-                edit();
+                edit(first);
                 break;
             case 5:
                 data = fopen("data", "w");
