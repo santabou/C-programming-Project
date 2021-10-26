@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/cmake-build-debug"/>
+				<Option working_dir="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/cmake-build-debug"/>
+				<Option working_dir="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/cmake-build-debug"/>
+				<Option working_dir="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="main">
-				<Option output="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/cmake-build-debug"/>
+				<Option output="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -51,15 +51,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="main/fast">
-				<Option output="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/cmake-build-debug"/>
+				<Option output="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -71,17 +71,17 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/thitiwatsornmanee/Desktop/C\ Programming\ Lab/Student-Database-Management2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/main.c">
+		<Unit filename="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/main.c">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management1/CMakeLists.txt">
+		<Unit filename="/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

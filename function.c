@@ -5,7 +5,7 @@
 void view(Node*);
 Node* create(Node*, Node*);
 void delete(Node**, Node**);
-void edit();
+void edit(Node*);
 
 
 void view(Node* first)
