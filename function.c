@@ -172,3 +172,19 @@ void edit(Node* first){
         }
     }
 }
+
+void outputCSV(FILE* output, Node* first)
+{
+    fprintf(output, "id,firstname,lastname,gender,programme");
+    Node* itr = first;
+    while(itr != NULL)
+    {
+        fprintf(output, "\n%i,%s,%s,", itr->student.id, itr->student.first_name, itr->student.last_name);
+        if(itr->student.gender == 0)
+            fprintf(output, "Male,");
+        else
+            fprintf(output, "Female,");
+        fprintf(output, "%s", itr->student.program);
+        itr = itr->next;
+    }
+}

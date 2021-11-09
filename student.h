@@ -33,4 +33,5 @@ void view(Node*);
 Node* create(Node*, Node*);
 void delete(Node**, Node**);
 void edit(Node*);
+void outputCSV(FILE*, Node*);
 #endif //STUDENT_DATABASE_MANAGEMENT_STUDENT_H

@@ -49,7 +49,8 @@ int main()
         printf("2. Create new student data\n");
         printf("3. Delete student data\n");
         printf("4. Edit student data\n");
-        printf("5. Save & Exit\n\n");
+        printf("5. Save & Exit\n");
+        printf("6. Output to CSV\n\n");
 
         int c;
         int selection;
@@ -76,6 +77,10 @@ int main()
                 fclose(data);
                 printf("Exiting program.");
                 exit(0);
+            case 6:
+                data = fopen("output.csv", "w");
+                outputCSV(data, first);
+                break;
             default:
                 printf("Invalid Selection!\n");
         }
