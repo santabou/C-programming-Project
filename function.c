@@ -70,7 +70,9 @@ Node* create(Node* first, Node* last)
     last->next = NULL;
 
     printf("Created student ID %i successfully\n", id);
+    return last;
 }
+
 void delete(Node** firstptr, Node** lastptr){
     printf("Deleting student data\n");
     printf("Enter student ID: ");
