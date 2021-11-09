@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = "/Users/muang/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.4746.93/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = "/Users/muang/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.4746.93/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2"
+CMAKE_SOURCE_DIR = /Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = "/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-D
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"/Users/muang/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.4746.93/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -78,7 +78,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	"/Users/muang/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.4746.93/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/cmake-build-debug/CMakeFiles" "/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/cmake-build-debug//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/cmake-build-debug/CMakeFiles /Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/thitiwatsornmanee/Desktop/C Programming Lab/Student-Database-Management2/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,6 +129,54 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+base.o: base.c.o
+.PHONY : base.o
+
+# target to build an object file
+base.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/base.c.o
+.PHONY : base.c.o
+
+base.i: base.c.i
+.PHONY : base.i
+
+# target to preprocess a source file
+base.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/base.c.i
+.PHONY : base.c.i
+
+base.s: base.c.s
+.PHONY : base.s
+
+# target to generate assembly for a file
+base.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/base.c.s
+.PHONY : base.c.s
+
+function.o: function.c.o
+.PHONY : function.o
+
+# target to build an object file
+function.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/function.c.o
+.PHONY : function.c.o
+
+function.i: function.c.i
+.PHONY : function.i
+
+# target to preprocess a source file
+function.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/function.c.i
+.PHONY : function.c.i
+
+function.s: function.c.s
+.PHONY : function.s
+
+# target to generate assembly for a file
+function.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/function.c.s
+.PHONY : function.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -162,6 +210,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... base.o"
+	@echo "... base.i"
+	@echo "... base.s"
+	@echo "... function.o"
+	@echo "... function.i"
+	@echo "... function.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,11 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
-#include "base.c"
-
-void view(Node*);
-Node* create(Node*, Node*);
-void delete(Node**, Node**);
-void edit(Node*);
+#include <stdio.h>
+#include "student.h"
 
 
 void view(Node* first)
@@ -74,8 +70,6 @@ Node* create(Node* first, Node* last)
     last->next = NULL;
 
     printf("Created student ID %i successfully\n", id);
-
-    return last;
 }
 void delete(Node** firstptr, Node** lastptr){
     printf("Deleting student data\n");

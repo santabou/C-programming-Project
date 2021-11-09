@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "function.c"
+#include <stdlib.h>
+#include "student.h"
 
 int main()
 {
@@ -9,10 +10,28 @@ int main()
     FILE* data = fopen("data", "r");
     if (data == NULL)
     {
+        first = (Node*) malloc(sizeof(Node));
         printf("Cannot find database file.\n");
         fclose(data);
-        //TODO create first student data here
-        first = (Node*) malloc(sizeof(Node));
+        printf("Creating first student data\n");
+        printf("Enter student ID: ");
+        first->student.id = getint();
+
+        while(1)
+        {
+            printf("Enter gender(M for male || F for female): ");
+            first->student.gender = getgender();
+            if(first->student.gender == -1)
+                continue;
+            else
+                break;
+        }
+        printf("Enter the student's first name: ");
+        getstring(first->student.first_name, 20);
+        printf("Enter the student's last name: ");
+        getstring(first->student.last_name, 20);
+        printf("Enter the student's programme: ");
+        getstring(first->student.program, 40);
         last = first;
     }
     else

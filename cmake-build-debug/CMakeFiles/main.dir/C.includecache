@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/base.c
+stdio.h
+-
+
+/Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/function.c
+stdlib.h
+-
+string.h
+-
+base.c
+/Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/base.c
+
+/Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/main.c
+stdio.h
+-
+function.c
+/Users/muang/Desktop/Muang/CLionProjects/Student-Database-Management/function.c
+

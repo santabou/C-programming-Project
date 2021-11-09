@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/main.dir/base.c.o"
+  "CMakeFiles/main.dir/function.c.o"
   "CMakeFiles/main.dir/main.c.o"
   "main"
   "main.pdb"

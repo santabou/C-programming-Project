@@ -1,21 +1,6 @@
 #include <stdio.h>
-enum gender{male, female};
-
-typedef struct
-{
-    int id;
-    enum gender gender;
-    char first_name[20];
-    char last_name[20];
-    char program[40];
-}Student;
-
-typedef struct Node
-{
-    Student student;
-    struct Node* next;
-}Node;
-// for linked list in main
+#include <stdlib.h>
+#include "student.h"
 
 // find a student from student ID. Return NULL if not found. Return a pointer pointing at that node.
 Node* findStudent(int student_id, Node* first)
@@ -54,11 +39,8 @@ Node* readFile(FILE* file, Node* first)
 {
     Node* last = first;
     Node* ptr = first;
-    while(!feof(file))
+    while(fread(&(ptr->student), sizeof(Student), 1, file) != 0)
     {
-        fread(&(ptr->student), sizeof(Student), 1, file);
-        if(feof(file))
-            break;
         ptr->next = (Node*) malloc(sizeof(Node));
         last = ptr;
         ptr = ptr->next;
@@ -74,11 +56,6 @@ void saveFile(FILE* file, Node* first)
     Node* nodeptr = first;
     while(nodeptr != NULL)
     {
-        if(nodeptr->student.id <= 0)
-        {
-            nodeptr = nodeptr->next;
-            continue;
-        }
         fwrite(nodeptr, sizeof(Student), 1, file);
         nodeptr = nodeptr->next;
     }
