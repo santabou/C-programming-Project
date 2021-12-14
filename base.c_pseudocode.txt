@@ -1,4 +1,5 @@
-calling library
+include library needs
+include "student.h" for using function 
 
 // find a student from student ID. Return NULL if not found. Return a pointer pointing at that node.
 declare Node* function findStudent(int student_id, Node* first)

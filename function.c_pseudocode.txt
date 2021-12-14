@@ -1,0 +1,170 @@
+include library needs
+include "student.h" for using function 
+
+declare void function view(Node pointer(first))
+    display "Enter student id: "
+    declare int(student_id) = fuction(getint)
+    declare Node pointer(ptr)
+    
+    if pointer(ptr) = function(findStudent(student_id), pointer(first)) != NULL
+        display "Student ID: (pointer(ptr) to student.id)"
+        display "Name: (pointer(ptr) to student.first_name) (pointer(ptr) to student.last_name)
+
+        if (pointer(ptr) to student.gender) = male  
+            display "Gender: Male"
+        else
+            display "Gender: Female"
+
+        display "Programme: (pointer(pointer(ptr) to student.program))
+
+    else
+        display "Student not found!"
+
+declare Node* function create(Node pointer(first), Node pointer(last))
+    display "Creating new student data"
+    display "Enter student ID: "
+    declare int(id) = function(getint)
+
+    if function(findStudent(int(id), pointer(first))) != NULL
+        display "The student ID already exists. Please use the edit function"
+        return pointer(last)
+
+    set pointer(last) to the next node and giving a memory(size of node)
+
+    if pointer(last) to the next node == NULL
+        display "Cannot allocate memory"
+        return last
+
+    set new value to pointer(last) as pointer(last) to the next node
+    declare char(firstname(for 20 character)), char(lastname(for 20 character)), char(programme(for 20 character))
+    declare enum gender(gender)
+    declare int(genderInput)
+
+    while(True)
+        display "Enter gender(M for male || F gor female): "
+        set int(genderInput) = function(getgender)
+        
+        if int(genderInput) == -1
+            continue
+        else
+            set enum(gender) = int(genderInput)
+            break
+
+    display "Enter the student's first name: "
+    declare function(getstring) for pointer(first) to student.first_name with maximum character of 20
+    display "Enter the student's last name: "
+    declare function(getstring) for pointer(first) to student.last_name with maximum character of 20
+    display "Enter the student's programme: "       
+    declare function(getstring) for pointer(first) to student.program with maximum character of 40
+    
+    set pointer(last) to student.id = int(id)
+    set pointer(last) to student.gender = int(gender)
+    copy string from pointer(firstname) into pointer(last) to student.first_name
+    copy string from pointer(lastname) into pointer(last) to student.last_name
+    copy string from pointer(programme) into pointer(last) to student.programme
+    set pointer(last) to next = NULL
+
+    display "Created student ID (int(id)) successfully"
+    return pointer(last)
+
+declare void function delete(Node* pointer(firstptr), Node* pointer(lastptr))
+    display "Deleting student data"
+    display "Enter student ID: "
+    declare int(id) = function(getInt)
+    declare Node pointer(del) = findStudent(id, pointer(firstptr))
+
+    if int(del) == NULL
+        display "The sudent ID dose not exists."
+        return
+
+    if int(del) == pointer(firstptr)
+        set Node Pointer(temp) = pointer(firstptr)
+        set pointer(firstptr) = pointer(firstptr) point to next node 
+        free pointer(temp)
+
+    else if int(del) == pointer(lastptr)
+        set Node pointer(delete) = function(findDeleteStudent(int(id), pointer(firstptr)))
+        set pointer(lastptr) = pointer(delete)
+        pointer(delete) to next node = NULL
+        free pointer(del)
+
+    else
+        set Node pointer(delete) = function(findDeleteStudent(int(id), pointer(firstptr)))
+        set Node pointer(temp) = pointer(delete) point to next node
+        set pointer(delete) point to next node = pointer(delete) point to next next node
+
+    display "DEleted student ID (int(id)) successfully"
+
+declare void function edit(Node pointer(first))
+    display "Enter student ID: "
+    declare int(id) = function(getint)
+    Node pointer(ptr)
+
+    if pointer(ptr) = function(findStudent(int(id), pointer(first))) == NULL
+        display "The student ID doesn't exists.Please use the create function instead."
+        return;
+
+    while(True)
+        display "Edit"                                      //apply newline to all declaration
+        display "Enter a number to proceed: "
+        display "1. Edit student id "
+        display "2. Edit student gender "
+        display "3. Edit student's firstname "
+        display "4. Edit student's lastname"
+        display "5. Edit student programme"
+        display "6. Exit"
+
+        declare int(c)
+        declare int(selection)
+        declare enum gender(inputGender)
+        display "Your selection: "
+        
+        while character != newline
+            int(selection) = int(c) - '0'
+
+        switch(int(selection))
+            case 1
+                display "Enter new student id: "
+                set pointer(ptr) point to student.id = function(getint)
+                break
+            case 2
+                while(True)
+                    display "Enter gender(M for male || F for female): "
+                    
+                    if (enum(inputGender) = function(getgender)) == -1
+                        continue
+                    else
+                        set pointer(ptr) point to student.gender = enum(inputGender)
+                        break
+                break
+            case 3
+                display "Enter the student's firstname: "
+                function(getstring(pointer(ptr point to student.first_name), size of 20)
+                break
+            case 4
+                display "Enter the student's lastname: "
+                function(getstring(pointer(ptr point to student.last_name), size of 20)
+                break
+            case 5
+                display "Enter the student's programme: "
+                function(getstring(pointer(ptr point to student.program), size of 40)
+                break
+            case 6
+                return
+            default
+                display "Invalid Selection!"
+
+declare void function outputCSV(FILE pointer(output), Node pointer(first))
+    write in file(output) display "id,firstname,lastname,gender,programme"
+    declare Node pointer(itr) = pointer(first)
+    
+    while pointer(itr) != NULL
+        write in file(output) display "(pointer(itr) point to student.id), (pointer(itr) point to student.first_name), (pointer(itr) point to student.last_name) 
+
+        if pointer(itr) point to student.gender == 0
+            write in file(output) display "Male"
+        else
+            write in file(output) display "Female"
+
+        write in file(output) display "(pointer(itr) point to student.program)"
+        set pointer(itr) = pointer(itr) point to next node
