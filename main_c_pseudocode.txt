@@ -10,10 +10,10 @@ main
     if data == NULL
         giving pointer(first) a memory(size of node)
         display "Cannot find database file."
-        close file
+        close file(data)
         display "Creating first student data"
         display "Enter student ID: "
-        set pointer(first) to student.id and function(getint)
+        set pointer(first) to student.id = function(getint)
 
         while(TRUE)
             display "Enter gender(M for male || F for female):"
