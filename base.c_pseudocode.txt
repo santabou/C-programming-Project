@@ -1,0 +1,107 @@
+calling library
+
+// find a student from student ID. Return NULL if not found. Return a pointer pointing at that node.
+declare Node* function findStudent(int student_id, Node* first)
+{
+    Node* find = first;
+    declare Node*find = (first)
+    while(find != NULL) loop until the end of linked list
+    {
+        if(find->student.id == student_id)
+        if node have the same student.id with the linked list
+            return find
+        else
+            set (find) pointer to next node
+    }
+    return NULL
+}
+
+// find a student from student ID. Return NULL if not found. Return a pointer pointing to node prior.
+declare Node* function findDeleteStudent(int student_id, Node* first)
+{
+    declare Node* findDelete = NULL;
+    declare Node* find = first;
+    while(find != NULL) loop until the end of linked list
+    {
+        if(find->student.id == student_id)
+            return findDelete;
+        else
+        {
+            set findDelete = find
+            set find = find pointer to next node
+        }
+    }
+    return NULL
+}
+
+// read the database file(Fileheader + Student structs) and link them into a linked list, return a pointer to the last node
+declare Node* function readFile(FILE* file, Node* first)
+{
+    declare Node* last point to first node
+    declare Node* ptr point to first node
+    while(read one struct from database file and stored it in ptr and while file not equal to EOF)
+    {
+        allocate additional memory to prepare for the student data to be read
+        point last to the last student struct that have been read
+        point ptr to our new allocate memory
+    }
+    free extra allocate memory
+    make the last node of the linked list pointl to NULL
+    return pointer to last node
+}
+
+// save the linked list into the database file
+declare void function saveFile(FILE* file, Node* first)
+{
+    nodeptr point to the first node in the linked list
+    while(nodeptr != NULL) node ptr not point to NULL
+    {
+        write the student data pointed by nodeptr to the file
+        point nodeptr to the next node in the linked list
+    }
+}
+
+declare int function getint()
+{
+    declare int character
+    declare char bufferString[20]
+    declare int i = 0;
+    while loop to read character until meet newline character
+    {
+        store character in buffer
+        if already read  18 character
+            break out of while loop
+    }
+    pad buffer with '\0'
+    convert string to integer then return
+}
+
+declare enum gender function getgender()
+    {
+        declare int c
+        declare enum gender gender
+       read one character
+            if character is 'M' set gender to Male
+            else if character is 'F' set gender to female
+            else return -1 (Invalid Input)
+       read another character
+        if character equal to newline return gender
+        else return -1 (Invalid Input)
+
+    }
+
+declare void function getstring(char* string, int len)
+{
+    declare int c
+    declare int count = 0
+    while loop reading character until meet newline
+    {
+        store character in string[count]
+        if read till the limit(length)
+            break out of loop
+    }
+    pad stringwith '\0'
+}
+
+
+
