@@ -1,0 +1,81 @@
+include library needs
+include "student.h" for using function 
+
+main
+    display "Welcome to Student Database Management System!"
+    declare pointer(First)
+    declare pointer(last)
+    declare pointer(data) to open and read file("data")
+
+    if data == NULL
+        giving pointer(first) a memory(size of node)
+        display "Cannot find database file."
+        close file
+        display "Creating first student data"
+        display "Enter student ID: "
+        set pointer(first) to student.id and function(getint)
+
+        while(TRUE)
+            display "Enter gender(M for male || F for female):"
+            set pointer(first) to student.gender = function(getgender)
+            
+            if the pointer(first) to student.gender = function(getgender) == -1
+                continue
+            else
+                break
+
+        display "Enter the student's first name: "
+        declare function(getstring) for pointer(first) to student.first_name with maximum character of 20
+        display "Enter the student's last name: "
+        declare function(getstring) for pointer(first) to student.last_name with maximum character of 20
+        display "Enter the student's programme: "       
+        declare function(getstring) for pointer(first) to student.program with maximum character of 40
+        set pointer(last) = pointer(first)
+
+    else
+        giving pointer(first) a memory(size of node)
+        last = function(readFile) to collect data form pointer(first)
+        close file(data)
+
+    while(True)
+        display "MENU"                                  //apply newline to all declaration
+        display "Enter a number to proceed:"
+        display "1. View student data"
+        display "2. Create new student data"
+        display "3. Delete student data"
+        display "4. Edit student data"
+        display "5. Save & Exit"
+        display "6. Output to CSV"
+
+        declare int(c)
+        declare int(selection)
+        display "Your selection: "
+        while char from file != newline
+            int(selection) = c - '\0'
+
+        switch case(selection)
+            case 1
+                go to function(view)
+                break
+            case 2
+                set pointer(last) = function(creat(giving pointer(first) and pointer(last)))
+                break
+            case 3
+                go to function(delete(address of first, address of last))
+                break
+            case 4
+                go to function(edit(giving pointer(first)))
+                break
+            case 5
+                set pointer(data) to open and write in file(data)
+                function(SaveFile(pointer(data), pointer(first)))
+                close file(data)
+                display "Exiting program."
+                exit()
+            case 6
+                set pointer(data) to open and write in file(data)
+                function(outputCSV(pointer(data), pointer(first)))
+            default
+                display "Invalid Selection!"
+
+        display "Returning to main menu."
